@@ -222,7 +222,7 @@ FOREACH (_var IN LISTS piclasVars1 piclasVars2 piclasVars3 piclasVars4 piclasVar
   # Skip empty variables
   IF(NOT "${${_var}}" STREQUAL "")
     SET(boolian ("${${_var}}" STREQUAL "ON" OR "${${_var}}" STREQUAL "OFF"))
-    IF(${boolian})
+    IF("${boolian}")
       FILE(APPEND ${configuration} "OPTION(${_var} \"${currentHelpString}\" "${${_var}}")\n")
     ELSE()
       IF(${_var})
